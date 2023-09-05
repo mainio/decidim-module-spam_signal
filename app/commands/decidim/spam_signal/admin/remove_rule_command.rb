@@ -3,7 +3,7 @@
 module Decidim
   module SpamSignal
     module Admin
-      class RemoveRuleCommand < Rectify::Command
+      class RemoveRuleCommand < Decidim::Command
         attr_reader :key,
                     :current_config,
                     :settings_repo

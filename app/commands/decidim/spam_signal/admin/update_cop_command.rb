@@ -3,7 +3,7 @@
 module Decidim
   module SpamSignal
     module Admin
-      class UpdateCopCommand < Rectify::Command
+      class UpdateCopCommand < Decidim::Command
         attr_reader :form,
                     :current_config,
                     :settings_repo
