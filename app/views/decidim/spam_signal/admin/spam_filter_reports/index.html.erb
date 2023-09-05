@@ -219,7 +219,7 @@
       <% @profile_settings.rules.filter {|_, r| r["handler_name"] == "spam"}.each do |rule_id, rule| %>
         <div class="table_item">
           <%= link_to(routes.edit_config_profile_rule_path(config_id: @current_config.id, id: rule_id, rule: "spam"), method: :get, class: "link") do %>
-            <%= rule["rules"].map {|k, v| k }.flatten.join(" AND ")%>
+            <%= (JSON.parse rule["rules"].gsub('=>', ':')).map {|k, v| k }.flatten.join(" AND ")%>
           <% end %>
           <div>
             <div class="button-group">
@@ -235,7 +235,7 @@
       <% @profile_settings.rules.filter {|_, r| r["handler_name"] == "suspicious"}.each do |rule_id, rule| %>
         <div class="table_item">
           <%= link_to(routes.edit_config_profile_rule_path(config_id: @current_config.id, id: rule_id, rule: "suspicious"), class: "link") do %>
-            <%= rule["rules"].map {|k, v| k }.flatten.join(" AND ")%>
+            <%= (JSON.parse rule["rules"].gsub('=>', ':')).map {|k, v| k }.flatten.join(" AND ")%>
           <% end %>
           <div>
             <div class="button-group">
