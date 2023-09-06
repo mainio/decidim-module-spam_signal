@@ -1,4 +1,19 @@
-if(window && window.location && window.location.reload)
-  window.location.reload();
-else
-  alert("Comment creation error");
+if (document.getElementById("temp_alert") !== document.getElementById("temp_alert")) {
+  <% if commentable.class.name.demodulize == "Comment" %>
+  document.getElementById("comment<%= commentable.id %>-reply").before(alert);
+  <% else %>
+    document.getElementById("new_comment_for_<%= commentable.class.name.demodulize %>_<%= commentable.id %>").before(alert)
+  <% end %>
+} else {
+  const alert = document.createElement("div");
+  alert.setAttribute("id", "temp_alert");
+  alert.setAttribute("class", "flash callout alert");
+  alert.setAttribute("role", "alert");
+  alert.innerText = "<%= t("comment_error") %>";
+
+  <% if commentable.class.name.demodulize == "Comment" %>
+  document.getElementById("comment<%= commentable.id %>-reply").before(alert);
+  <% else %>
+    document.getElementById("new_comment_for_<%= commentable.class.name.demodulize %>_<%= commentable.id %>").before(alert)
+  <% end %>
+};

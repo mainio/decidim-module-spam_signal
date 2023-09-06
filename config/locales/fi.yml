@@ -114,3 +114,4 @@ fi:
   agents: Toimijat
   none: Tyhjä
   spam_filter: Roskaposti-suodin
+  comment_error: Tämä kommentti ei ole sovelias, yritä uudelleen

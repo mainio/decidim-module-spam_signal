@@ -116,3 +116,4 @@ en:
   agents: Agents
   none: None
   spam_filter: Spam filter
+  comment_error: This comment is not tolerable, try again
