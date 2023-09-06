@@ -110,7 +110,7 @@ module Decidim
           spam_config.comments.rules.map do |rule_id, rule|
             rule
           end.filter { |r| r["handler_name"] == handler_name }.map do |r|
-            r["rules"].symbolize_keys.keys
+            (JSON.parse r["rules"].gsub('=>', ':')).symbolize_keys.keys
           end
         end
       end

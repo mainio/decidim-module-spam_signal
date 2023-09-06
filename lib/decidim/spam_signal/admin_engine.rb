@@ -25,7 +25,7 @@ module Decidim
 
       initializer "decidim_spam_signal.admin_menu" do
         Decidim.menu :admin_menu do |menu|
-          menu.item I18n.t("menu.spam_signal", scope: "decidim.admin", default: "Spam Filter"),
+          menu.item I18n.t("menu.spam_signal", scope: "decidim.admin", default: t("spam_filter")),
                     decidim_admin_spam_signal.spam_filter_reports_path,
                     icon_name: "shield",
                     position: 9,

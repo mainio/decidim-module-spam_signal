@@ -1,0 +1,116 @@
+---
+fi:
+  activerecord:
+    models:
+      decidim/spam_signal/config:
+        one: "Anti-Spam Asetukset"
+        other: "Anti-Spam Asetukset"
+  activemodel:
+    attributes:
+      lock:
+        is_email_unlockable: "Tili voidaan vapauttaa sähköpostitse"
+  decidim:
+    account:
+      locked: Tilisi on lukittu, olemme lähettäneet ohjeet tilisi vapauttamiseen sähköpostiisi
+    spam_signal:
+      spam_signal_justification: |
+        Suodin on havainnut roskapostia.
+      errors:
+        spam: Kommenttisi näyttää roskapostilta.
+      forms:
+        word_settings_form:
+          stop_list_words_csv: "Epäilyttävät sanat, yksi per rivi"
+        allowed_tlds_form:
+          allowed_tlds_csv: "Lista sallituista verkkotunnuksen laajennuksista (esim. `.ch`), pilkulla eroteltu."
+        forbidden_tlds_form:
+          forbidden_tlds_csv: "Lista estetyistä verkkotunnuksen laajennuksista (esim. `.finance`), pilkulla eroteltu."
+        lock_settings_form:
+          sinalize_user_enabled: "Kun tili on lukittu, ilmoita käyttäjälle"
+          hide_comments_enabled: "Kun tili on lukittu, piilota kaikki käyttäjän kommentit"
+          forbid_creation_enabled: "Näytä validaatiovirhettä (käyttäjän syöttämää dataa ei tallenneta)"
+        sinalize_settings_form:
+          forbid_creation_enabled: "Näytä validaatiovirhettä (käyttäjän syöttämää dataa ei tallenneta)"
+          send_emails_enabled: "Lähetä sähköposti ilmoituksen jälkeen?"
+      scans:
+        word:
+          name: "Sanasto"
+          description: "Listaa estetyt sanat"
+        allowed_tlds:
+          name: "Sallitut verkkotunnuksen laajennukset"
+          description: "Salli lista verkkotunnuksen laajennuksista, estä muut"
+        forbidden_tlds:
+          name: "Estetyt verkkotunnuksen laajennukset"
+          description: "Kiellä lista verkkotunnuksen laajennuksista, oletuksena salli kaikki"
+      cops:
+        sinalize:
+          name: "Ilmoita"
+          description: "Ilmoita käyttäjä ylläpitäjille"
+        lock:
+          name: "Lukitse"
+          description: "Lukitse käyttäjä ja lähetä ohjeet tilin vapauttamiseen sähköpostiin"
+      admin:
+        actions:
+          save: "Tallenna"
+        spam_filter_reports:
+          index:
+            headings:
+              title: "ANTI-SPAM"
+              comment_settings: "Kommentit"
+              profile_settings: "Profiilit"
+        comment_scans:
+          new:
+            headings:
+              title: "Uusi roskapostin tunnistus kommenteille"
+              choose_scan: "Valitse tunnistustapa"
+          edit:
+            headings:
+              title: "Muokkaa %{scan} -skanneria"
+              caption: "%{scan} -asetukset"
+        comment_rules:
+          new:
+            headings:
+              title: "Uusi %{type} -sääntö"
+              caption: "Tarkista vaadittavat havaintosymbolit laukaisemaan sääntö: "
+            description: "Laukaise %{type} -toimija jos nämä kaikki pitävät paikkansa"
+          edit:
+            description: "Laukaise %{type} -toimija jos nämä kaikki pitävät paikkansa"
+            headings:
+              caption: "Tarkista vähintään yksi vaadittava havaintosymboli laukaisemaan sääntö: "
+        comment_cops:
+          edit:
+            headings:
+              choose_cop: "Valitse aktiivinen toimija %{type}"
+              title: "%{type} -toimijan asetukset"
+            form: "Muokkaa %{type} -asetuksia"
+        profile_scans:
+          new:
+            headings:
+              title: "Uusi roskapostin tunnistustapa profiilin luomiseen"
+              choose_scan: "Valitse tunnistustapa"
+          edit:
+            headings:
+              caption: "%{scan} -asetukset"
+              title: "Muokkaa %{scan} Skanneria"
+        profile_rules:
+          new:
+            headings:
+              title: "Uusi %{type} -sääntö"
+              caption: "Tarkista vaadittavat havaintosymbolit laukaisemaan sääntö: "
+            description: "Laukaise %{type} -toimija jos nämä kaikki pitävät paikkansa"
+          edit:
+            description: "Laukaise %{type} -toimija jos nämä kaikki pitävät paikkansa"
+            headings:
+              caption: "Tarkista vähintään yksi vaadittava havaintosymboli laukaisemaan sääntö: "
+        profile_cops:
+          edit:
+            headings:
+              title: "%{type} -toimijan asetukset"
+              choose_cop: "Valitse toimija joka on aktiivinen tyypissä: %{type}"
+            form: "Muuta %{type} -asetuksia"
+  detection: Tunnistus
+  rules: Säännöt
+  spam: Roskaposti
+  suspicious: Epäilyttävät
+  agents: Toimijat
+  none: Tyhjä
+  spam_filter: Roskaposti-suodin

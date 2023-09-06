@@ -99,7 +99,7 @@
   <div class="grid-x grid-margin-y spam_settings">
     <div class="cell small-12 medium-4 scanners">
       <h2>
-        <span>Detection</span>
+        <span><%= t("detection") %></span>
         <% if available_scanners("comments").length > 0 %><%= link_to(routes.new_config_comment_scan_path(config_id: @current_config.id), class: "button  action") do %>+<% end %><% end %>
       </h2>
       <% @comment_settings.scans.each do |scan, options| %>
@@ -117,9 +117,9 @@
     </div>
 
     <div class="cell small-12 medium-4 rules">
-      <h2>Rules</h2>
+      <h2><%= t("rules") %></h2>
       <h3>
-        <span>SPAM</span>
+        <span><%= t("spam") %></span>
         <%= link_to("+ OR", routes.new_config_comment_rule_path(config_id: @current_config.id, rule: "spam"), class: "button small") %>
       </h3>
       <% @comment_settings.rules.filter {|_, r| r["handler_name"] == "spam"}.each do |rule_id, rule| %>
@@ -135,7 +135,7 @@
         </div>
       <% end %>
       <h3 style="margin-top: 2rem">
-        <span>SUSPICIOUS</span>
+        <span><%= t("suspicious") %></span>
         <%= link_to("+ OR", routes.new_config_comment_rule_path(config_id: @current_config.id, rule: "suspicious"), class: "button small") %>
       </h3>
       <% @comment_settings.rules.filter {|_, r| r["handler_name"] == "suspicious"}.each do |rule_id, rule| %>
@@ -152,12 +152,12 @@
       <% end %>
     </div>
     <div class="cell small-12 medium-4 cops">
-      <h2>Agents</h2>
-      <h3><span>SPAM</span></h3>
+      <h2><%= t("agents") %></h2>
+      <h3><span><%= t("spam") %></span></h3>
         <div class="table_item">
           <%= link_to(routes.edit_config_comment_cop_path(config_id: @current_config.id, id: "spam", cop: (@comment_settings.spam_cop["handler_name"] unless @comment_settings.spam_cop.empty?)), class: "link") do %>
             <% if @comment_settings.spam_cop.empty? %>
-                  None
+                  <%= t("none") %>
             <% else %>
               <%= @comment_settings.spam_cop["handler_name"] %>
             <% end %>
@@ -168,11 +168,11 @@
             </div>
           </div>
         </div>
-            <h3 style="margin-top: 2rem"><span>SUSPICIOUS</span> </h3>
+            <h3 style="margin-top: 2rem"><span><%= t("suspicious") %></span> </h3>
         <div class="table_item">
           <%= link_to(routes.edit_config_comment_cop_path(config_id: @current_config.id, id: "suspicious", cop: (@comment_settings.suspicious_cop["handler_name"] unless @comment_settings.suspicious_cop.empty?)), class: "link") do %>
             <% if @comment_settings.suspicious_cop.empty? %>
-                  None
+                  <%= t("none") %>
             <% else %>
               <%= @comment_settings.suspicious_cop["handler_name"] %>
             <% end %>
@@ -193,7 +193,7 @@
   <div class="grid-x grid-margin-y spam_settings">
     <div class="cell small-12 medium-4 scanners">
       <h2>
-        <span>Detection</span>
+        <span><%= t("detection") %></span>
         <% if available_scanners("profiles").length > 0 %><%= link_to(routes.new_config_profile_scan_path(config_id: @current_config.id), class: "button  action") do %>+<% end %><% end %>
       </h2>
       <% @profile_settings.scans.each do |scan, options| %>
@@ -211,9 +211,9 @@
     </div>
 
     <div class="cell small-12 medium-4 rules">
-      <h2>Rules</h2>
+      <h2><%= t("rules") %></h2>
       <h3>
-        <span>SPAM</span>
+        <span><%= t("spam") %></span>
         <%= link_to("+ OR", routes.new_config_profile_rule_path(config_id: @current_config.id, rule: "spam"), class: "button small") %>
       </h3>
       <% @profile_settings.rules.filter {|_, r| r["handler_name"] == "spam"}.each do |rule_id, rule| %>
@@ -229,7 +229,7 @@
         </div>
       <% end %>
       <h3 style="margin-top: 2rem">
-        <span>SUSPICIOUS</span>
+        <span><%= t("suspicious") %></span>
         <%= link_to("+ OR", routes.new_config_profile_rule_path(config_id: @current_config.id, rule: "suspicious"), class: "button small") %>
       </h3>
       <% @profile_settings.rules.filter {|_, r| r["handler_name"] == "suspicious"}.each do |rule_id, rule| %>
@@ -246,12 +246,12 @@
       <% end %>
     </div>
     <div class="cell small-12 medium-4 cops">
-      <h2>Agents</h2>
-      <h3><span>SPAM</span></h3>
+      <h2><%= t("agents") %></h2>
+      <h3><span><%= t("spam") %></span></h3>
         <div class="table_item">
           <%= link_to(routes.edit_config_profile_cop_path(config_id: @current_config.id, id: "spam", cop: (@profile_settings.spam_cop["handler_name"] unless @profile_settings.spam_cop.empty?)), class: "link") do %>
             <% if @profile_settings.spam_cop.empty? %>
-                  None
+                  <%= t("none") %>
             <% else %>
               <%= @profile_settings.spam_cop["handler_name"] %>
             <% end %>
@@ -262,11 +262,11 @@
             </div>
           </div>
         </div>
-            <h3 style="margin-top: 2rem"><span>SUSPICIOUS</span> </h3>
+            <h3 style="margin-top: 2rem"><span><%= t("suspicious") %></span> </h3>
         <div class="table_item">
           <%= link_to(routes.edit_config_profile_cop_path(config_id: @current_config.id, id: "suspicious", cop: (@profile_settings.suspicious_cop["handler_name"] unless @profile_settings.suspicious_cop.empty?)), class: "link") do %>
             <% if @profile_settings.suspicious_cop.empty? %>
-                  None
+                  <%= t("none") %>
             <% else %>
               <%= @profile_settings.suspicious_cop["handler_name"] %>
             <% end %>

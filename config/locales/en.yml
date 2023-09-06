@@ -26,15 +26,15 @@ en:
         forbidden_tlds_form:
           forbidden_tlds_csv: "List of forbidden tlds (extensions, like `.finance`), comma-separated"
         lock_settings_form:
-          sinalize_user_enabled: "After locking, sinalize the user"
+          sinalize_user_enabled: "After locking, signal the user"
           hide_comments_enabled: "After locking, hide all the user's comments"
           forbid_creation_enabled: "Raise a validation error (when user submit data, it won't be saved)"
         sinalize_settings_form:
           forbid_creation_enabled: "Raise a validation error (when user submit data, it won't be saved)"
-          send_emails_enabled: "Send emails after sinalizations?"
+          send_emails_enabled: "Send emails after signaling?"
       scans:
         word:
-          name: "Dictionnary"
+          name: "Dictionary"
           description: "List forbidden words"
         allowed_tlds:
           name: "Allowed TLDs"
@@ -44,8 +44,8 @@ en:
           description: "Forbid a list of domain extension, allow all by default."
       cops:
         sinalize:
-          name: "Sinalize"
-          description: "Sinalize the user to the administrators"
+          name: "Signal"
+          description: "Signal the user to the administrators"
         lock:
           name: "Lock"
           description: "Lock the user, and send unlock instructions by email"
@@ -63,7 +63,7 @@ en:
           new:
             headings:
               title: "New spam detection for comment creation"
-              choose_scan: "Chose a detection type"
+              choose_scan: "Choose a detection type"
           edit:
             headings:
               title: "Edit %{scan} Scanner"
@@ -72,12 +72,12 @@ en:
           new:
             headings:
               title: "New %{type} rule"
-              caption: "Check the detections symbols required to fire the rule:"
+              caption: "Check the detection symbols required to fire the rule:"
             description: "Fire %{type} agent if these are all TRUE"
           edit:
             description: "Fire %{type} agent if these are all TRUE"
             headings:
-              caption: "Check at least on detection symbol required to fire the rule:"
+              caption: "Check at least one detection symbol required to fire the rule:"
         comment_cops:
           edit:
             headings:
@@ -109,3 +109,10 @@ en:
               title: "%{type} agent configuration"
               choose_cop: "Choose an agent active on %{type}"
             form: "Customize %{type} Options"
+  detection: Detection
+  rules: Rules
+  spam: SPAM
+  suspicious: SUSPICIOUS
+  agents: Agents
+  none: None
+  spam_filter: Spam filter
